@@ -27,7 +27,7 @@
 
     <br><br>
 
-    <button class="colorful-btn" onclick="toggleMap()">View Floor Layout</button>
+    <button class="colorful-btn" onclick="toggleMap(this)">View Floor Layout</button>
 
     <div class="floor-map" id="mapBox">
       <!-- Put your 1st floor diagram here -->
@@ -36,11 +36,17 @@
   </div>
 
   <script>
-    function toggleMap() {
+    function toggleMap(btn) {
       const map = document.getElementById("mapBox");
-      map.style.display = (map.style.display === "none" || map.style.display === "")
-        ? "block"
-        : "none";
+      // store original label
+      if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
+      map.classList.toggle('open');
+      if (map.classList.contains('open')) {
+        btn.textContent = btn.dataset.openLabel || 'Hide layout';
+        setTimeout(() => map.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+      } else {
+        btn.textContent = btn.dataset.orig;
+      }
     }
   </script>
 

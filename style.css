@@ -8,7 +8,12 @@
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #eff2f7 100%);
+  /* campus photo as the full-page background with a soft bluish overlay */
+  background-image: linear-gradient(180deg, rgba(234,244,255,0.8), rgba(224,242,255,0.8)), url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #2c3e50;
   line-height: 1.6;
   min-height: 100vh;
@@ -33,16 +38,12 @@ header h1 {
   letter-spacing: -0.5px;
 }
 
-footer {
-  padding: 15px 20px;
-  font-size: 14px;
-  margin-top: auto;
-}
 
 /* Map */
 #map {
-  height: 85vh;
+  height: 85vh; /* restored to full-bleed height for index page */
   width: 100%;
+  border-radius: 0;
   box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
 }
 
@@ -268,27 +269,64 @@ footer {
 .floor-map {
   margin-top: 30px;
   text-align: center;
-  display: none;
+  /* Start hidden via max-height and opacity so we can animate smoothly */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.992);
+  overflow: hidden;
+  transition: max-height 700ms cubic-bezier(.16,.84,.24,1), opacity 520ms ease, transform 620ms cubic-bezier(.16,.84,.24,1);
+  will-change: max-height, opacity, transform;
+}
+
+.floor-map.open {
+  max-height: 1400px; /* large enough to reveal content */
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .floor-map img {
   max-width: 100%;
   border-radius: 14px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+  transition: transform 520ms cubic-bezier(.16,.84,.24,1), opacity 520ms ease, filter 520ms cubic-bezier(.16,.84,.24,1);
+  opacity: 0;
+  transform: scale(0.99) translateY(-8px);
+  filter: blur(6px) saturate(.9) brightness(.9);
 }
 
-.floor-map img:hover {
-  transform: scale(1.02);
+.floor-map.open img {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0) saturate(1) brightness(1);
 }
 
 /* Content Container */
 .content {
-  padding: 30px;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 28px;
+  max-width: 1100px;
+  margin: 20px auto;
   flex: 1;
-  width: 100%;
+  width: calc(100% - 48px);
+  background-color: #ffffff;
+  /* sharper, more defined box */
+  border-radius: 2px;
+  border: 1px solid rgba(16,24,40,0.12);
+  box-shadow: 0 10px 28px rgba(16,24,40,0.12), 0 2px 0 rgba(255,255,255,0.03) inset;
+  transition: box-shadow 220ms ease, transform 220ms ease;
+  /* campus photo inside the box with a soft white overlay and subtle grid on top */
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+    url('background.jpg');
+  background-size: 28px 28px, 28px 28px, cover, cover;
+  background-position: center, center, center, center;
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+}
+
+.content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 44px rgba(16,24,40,0.14), 0 4px 0 rgba(255,255,255,0.03) inset;
 }
 
 .content h2 {
