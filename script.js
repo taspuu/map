@@ -1,5 +1,5 @@
 // Initialize map at Barishal location (P942+2V6)
-var map = L.map('map').setView([22.7010, 90.3535], 17);
+var map = L.map('map').setView([22.70519393776977, 90.3521329174623], 17);
 
 // Add tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
