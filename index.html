@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Campus Map - Barishal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <h1>University Campus Map - Barishal</h1>
+  </header>
+
+  <div id="map"></div>
+
+  <!-- Building Floors Modal -->
+  <div id="buildingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="buildingName">UGV B2</h2>
+      <div class="building">
+        <button class="floor-btn" onclick="openFloorPage(1)">1st Floor</button>
+        <button class="floor-btn" onclick="openFloorPage(2)">2nd Floor</button>
+        <button class="floor-btn" onclick="openFloorPage(3)">3rd Floor</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 University Campus Map</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGV B2 - 1st Floor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .room {
+      background: #007BFF;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #003366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-link:hover {
+      background: #0055aa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UGV B2 - 1st Floor</h1>
+  </header>
+
+  <div class="content">
+    <h2>Classrooms & Labs</h2>
+    <div class="room">Room 101 - Digital Lab</div>
+    <div class="room">Room 102 - canteen</div>
+    <div class="room">Room 103 - Canteen</div>
+    <div class="room">Room 104 - registratiopn room</div>
+    <div class="room">Room 105 - General Classroom</div>
+
+    <a href="index.html" class="back-link">← Back to Campus Map</a>
+  </div>
+</body>
+</html>
