@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UGV B2 - 2nd Floor</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
     body {
       margin: 0;
@@ -36,7 +37,7 @@
       padding: 12px;
       margin: 10px 0;
       border-radius: 5px;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 0.8s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -57,22 +58,76 @@
     .back-link:hover {
       background: #0055aa;
     }
+
+    /* MAP BUTTON */
+    .colorful-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: linear-gradient(45deg, #28a745, #20c997);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .colorful-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* FLOOR MAP IMAGE */
+    .floor-map {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .floor-map img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>UGV B2 - 2nd Floor</h1>
   </header>
 
   <div class="content">
-    <h2>Faculty Offices</h2>
-    <div class="office">Office 201 - CSE </div>
-    <div class="office">Office 202 - CSE Department2</div>
-    <div class="office">Office 203 -  Computer Science Lab</div>
-    <div class="office">Office 204 - CSE Lab</div>
-    <div class="office">Office 205 - Meeting Room</div>
+    <h2>Faculty Offices & Labs</h2>
+
+    <div class="office">Office 201</div>
+    <div class="office">Office 202</div>
+    <div class="office">Lab 1 - Computer Science Lab</div>
+    <div class="office">Lab 2 - CSE Lab</div>
+        <div class="office">Lab 3 - Computer Science Lab</div>
+    <div class="office">Lab 4 - CSE Lab</div>
+    <div class="office">Department of CSE</div>
 
     <a href="index.html" class="back-link">← Back to Campus Map</a>
+
+    <br><br>
+
+    <button class="colorful-btn" onclick="toggleMap()">Show MAP</button>
+
+    <div class="floor-map" id="mapBox">
+      <!-- CHANGE IMAGE NAME IF NEEDED -->
+      <img src="2nd floor.png" alt="UGV B2 2nd Floor Map">
+    </div>
   </div>
+
+  <script>
+    function toggleMap() {
+      const map = document.getElementById("mapBox");
+      map.style.display = (map.style.display === "none" || map.style.display === "")
+        ? "block"
+        : "none";
+    }
+  </script>
+
 </body>
 </html>

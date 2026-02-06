@@ -1,29 +1,31 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
 }
 
-header {
-  background: #003366;
+/* Header and Footer */
+header, footer {
+  background: linear-gradient(90deg, #0056b3, #007BFF);
   color: white;
-  padding: 15px;
   text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Map */
 #map {
-  height: 80vh;
+  height: 85vh;
   width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-footer {
-  background: #003366;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-/* Modal styling */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -32,47 +34,73 @@ footer {
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.6);
 }
-
 .modal-content {
-  background: white;
+  background: #fff;
   margin: 10% auto;
-  padding: 20px;
-  width: 350px;
-  border-radius: 8px;
+  padding: 25px;
+  width: 360px;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.close {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Floor buttons */
+/* Floor Buttons */
 .floor-btn {
   display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  background: #007BFF;
+  margin: 12px 0;
+  padding: 14px;
+  background: linear-gradient(90deg, #007BFF, #00BFFF);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  animation: riseUp 0.8s ease-in-out forwards;
+  transition: transform 0.2s ease, background 0.3s ease;
   opacity: 0;
 }
-
-.floor-btn:nth-child(1) { animation-delay: 0.3s; }
-.floor-btn:nth-child(2) { animation-delay: 0.6s; }
-.floor-btn:nth-child(3) { animation-delay: 0.9s; }
-
-@keyframes riseUp {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.floor-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #00BFFF, #007BFF);
 }
- .colorful-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-    }
+
+/* Room / Office / Lab Cards */
+.room, .office, .section {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.room:hover, .office:hover, .section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+.room { background: linear-gradient(135deg, #007BFF, #00BFFF); }
+.office { background: linear-gradient(135deg, #28a745, #20c997); }
+.section { background: linear-gradient(135deg, #ffc107, #ffca2c); }
+
+/* Buttons */
+.back-link, .colorful-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.back-link { background: #0056b3; }
+.back-link:hover { transform: scale(1.05); background: #007BFF; }
+.colorful-btn { background: linear-gradient(45deg, #007BFF, #00BFFF); border: none; }
+.colorful-btn:hover { transform: scale(1.05); }
+
+/* Floor Map */
+.floor-map { margin-top: 20px; text-align: center; display: none; }
+.floor-map img { max-width: 100%; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+
+
