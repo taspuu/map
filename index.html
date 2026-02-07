@@ -19,10 +19,22 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2 id="buildingName">UGV B2</h2>
-      <div class="building">
-        <button class="floor-btn" onclick="openFloorPage(1)">1st Floor</button>
-        <button class="floor-btn" onclick="openFloorPage(2)">2nd Floor</button>
-        <button class="floor-btn" onclick="openFloorPage(3)">3rd Floor</button>
+      <div class="floors-container">
+        <div class="floor-box">
+          <h3>1st Floor</h3>
+          <p>Access the first floor map and details</p>
+          <button class="floor-btn" onclick="openFloorPage(1)">Visit Floor</button>
+        </div>
+        <div class="floor-box">
+          <h3>2nd Floor</h3>
+          <p>Access the second floor map and details</p>
+          <button class="floor-btn" onclick="openFloorPage(2)">Visit Floor</button>
+        </div>
+        <div class="floor-box">
+          <h3>3rd Floor</h3>
+          <p>Access the third floor map and details</p>
+          <button class="floor-btn" onclick="openFloorPage(3)">Visit Floor</button>
+        </div>
       </div>
     </div>
   </div>
@@ -65,13 +77,13 @@
       document.getElementById("buildingName").innerText = name;
       modal.style.display = "block";
 
-      // Restart animation for buttons
-      let buttons = document.querySelectorAll(".floor-btn");
-      buttons.forEach(btn => {
-        btn.style.opacity = "0";
-        btn.style.animation = "none";
-        void btn.offsetWidth;
-        btn.style.animation = "";
+      // Restart animation for floor boxes
+      let boxes = document.querySelectorAll(".floor-box");
+      boxes.forEach(box => {
+        box.style.opacity = "0";
+        box.style.animation = "none";
+        void box.offsetWidth;
+        box.style.animation = "";
       });
     }
 
