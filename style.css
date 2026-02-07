@@ -69,7 +69,7 @@ header h1 {
   margin: 15% auto;
   padding: 40px;
   width: 90%;
-  max-width: 900px;
+  max-width: 1100px;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -122,6 +122,8 @@ header h1 {
 .floor-box:nth-child(1) { animation-delay: 0.1s; }
 .floor-box:nth-child(2) { animation-delay: 0.2s; }
 .floor-box:nth-child(3) { animation-delay: 0.3s; }
+.floor-box:nth-child(4) { animation-delay: 0.4s; }
+.floor-box:nth-child(5) { animation-delay: 0.5s; }
 
 @keyframes slideInFloor {
   from {
@@ -484,6 +486,211 @@ html {
 
 .building {
   margin: 10px 0;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  /* Header */
+  header h1 {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+
+  /* Map height for mobile */
+  #map {
+    height: 60vh;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    margin: 30% auto;
+    padding: 25px;
+    width: 95%;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Floors container - 2 columns on tablet */
+  .floors-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Floor boxes */
+  .floor-box {
+    min-height: 180px;
+    padding: 20px;
+  }
+
+  .floor-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .floor-box p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  /* Items container - 2 columns on tablet */
+  .items-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Room/office/section cards */
+  .room, .office, .section {
+    padding: 20px;
+    min-height: 150px;
+    border-radius: 12px;
+  }
+
+  .room h3, .office h3, .section h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .room p, .office p, .section p {
+    font-size: 13px;
+  }
+
+  /* Buttons */
+  .back-link, .colorful-btn, .nav-btn, .floor-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    margin: 10px auto;
+  }
+
+  .item-btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+
+  /* Content */
+  .content {
+    padding: 20px 15px;
+  }
+
+  .content h2 {
+    font-size: 20px;
+    margin: 15px 0;
+  }
+}
+
+/* Mobile Phone Responsive Design */
+@media (max-width: 480px) {
+  /* Header */
+  header h1 {
+    font-size: 18px;
+    padding: 15px 10px;
+  }
+
+  header, footer {
+    padding: 15px 10px;
+  }
+
+  /* Map height for small phones */
+  #map {
+    height: 50vh;
+  }
+
+  /* Modal adjustments for small screens */
+  .modal-content {
+    margin: 50% auto;
+    padding: 20px;
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  /* Floors container - single column */
+  .floors-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  /* Floor boxes */
+  .floor-box {
+    min-height: 160px;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .floor-box h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .floor-box p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  /* Items container - single column on small phones */
+  .items-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  /* Room/office/section cards */
+  .room, .office, .section {
+    padding: 18px;
+    min-height: 140px;
+    border-radius: 10px;
+  }
+
+  .room h3, .office h3, .section h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .room p, .office p, .section p {
+    font-size: 12px;
+  }
+
+  /* Buttons */
+  .back-link, .colorful-btn, .nav-btn, .floor-btn {
+    padding: 11px 18px;
+    font-size: 13px;
+    margin: 8px auto;
+    width: 80%;
+  }
+
+  .item-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Content */
+  .content {
+    padding: 15px 10px;
+  }
+
+  .content h2 {
+    font-size: 18px;
+    margin: 12px 0;
+  }
+
+  /* Floor map */
+  .floor-map img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 
