@@ -8,9 +8,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Custom marker icon
 var ugvB2Icon = L.icon({
   iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-  iconSize: [40,40],
-  iconAnchor: [20,40],
-  popupAnchor: [0,-35]
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -35]
 });
 
 // Marker with popup
@@ -23,7 +23,7 @@ var ugvB2Marker = L.marker([22.7050974, 90.3520741], { icon: ugvB2Icon })
 var modal = document.getElementById("buildingModal");
 var span = document.getElementsByClassName("close")[0];
 
-function openBuildingModal(name){
+function openBuildingModal(name) {
   document.getElementById("buildingName").innerText = name;
   modal.style.display = "block";
 
@@ -36,10 +36,15 @@ function openBuildingModal(name){
   });
 }
 
-span.onclick = function(){ modal.style.display = "none"; }
-window.onclick = function(event){ if(event.target == modal){ modal.style.display = "none"; } }
+span.onclick = function() { modal.style.display = "none"; }
+window.onclick = function(event) { if(event.target == modal) { modal.style.display = "none"; } }
 
 // Floor redirect
-function openFloorPage(floorNumber){
+function openFloorPage(floorNumber) {
   window.location.href = "floor" + floorNumber + ".html";
 }
+
+// Button click event listener
+document.getElementById("explore-btn").addEventListener("click", function() {
+  openFloorPage(2);
+});

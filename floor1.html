@@ -8,6 +8,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <h1>UGV B2 - 1st Floor</h1>
   </header>
@@ -19,48 +20,47 @@
       <div class="room">
         <h3>Room 101</h3>
         <p>Digital Lab</p>
-        <button class="item-btn">Visit</button>
+        <button class="colorful-btn">Visit</button>
       </div>
       <div class="room">
         <h3>Room 102</h3>
         <p>Canteen</p>
-        <button class="item-btn">Visit</button>
+        <button class="colorful-btn">Visit</button>
       </div>
       <div class="room">
         <h3>Room 103</h3>
         <p>General Classroom</p>
-        <button class="item-btn">Visit</button>
+        <button class="colorful-btn">Visit</button>
       </div>
       <div class="room">
         <h3>Room 104</h3>
         <p>Registration Room</p>
-        <button class="item-btn">Visit</button>
+        <button class="colorful-btn">Visit</button>
       </div>
       <div class="room">
         <h3>Room 105</h3>
         <p>General Classroom</p>
-        <button class="item-btn">Visit</button>
+        <button class="colorful-btn">Visit</button>
       </div>
     </div>
 
+    <!-- NAVIGATION -->
     <a href="index.html" class="back-link">← Back to Campus Map</a>
-
     <a href="floor2.html" class="nav-btn next-btn">Go to Floor 2 →</a>
 
     <br><br>
 
+    <!-- FLOOR MAP -->
     <button class="colorful-btn" onclick="toggleMap(this)">View Floor Layout</button>
-
     <div class="floor-map" id="mapBox">
-      <!-- Put your 1st floor diagram here -->
       <img src="1st floor.png" alt="UGV B2 1st Floor Map">
     </div>
   </div>
 
+  <!-- SCRIPT -->
   <script>
     function toggleMap(btn) {
       const map = document.getElementById("mapBox");
-      // store original label
       if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
       map.classList.toggle('open');
       if (map.classList.contains('open')) {
