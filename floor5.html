@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UGV B2 - 5th Floor</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
@@ -52,7 +54,17 @@
     <button class="colorful-btn" onclick="toggleMap(this)">Show MAP</button>
 
     <div class="floor-map" id="mapBox">
-      <img src="5th floor.png" alt="UGV B2 5th Floor Map">
+      <img src="image/5th floor.png" alt="UGV B2 5th Floor Map">
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL POPUP -->
+  <div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+      <button class="image-modal-close" onclick="closeImageModal()">&times;</button>
+      <h2 class="image-modal-title" id="modalTitle">Room Details</h2>
+      <img id="modalImage" src="image/images.jfif" alt="Room image" class="image-modal-image">
+      <p class="image-modal-description" id="modalDescription">This is a room in our campus building.</p>
     </div>
   </div>
 
@@ -68,7 +80,49 @@
         btn.textContent = btn.dataset.orig;
       }
     }
+
+    // Image popup functionality
+    function openImageModal(roomName, roomType) {
+      const modal = document.getElementById('imageModal');
+      const title = document.getElementById('modalTitle');
+      const image = document.getElementById('modalImage');
+      const description = document.getElementById('modalDescription');
+
+      title.textContent = roomName;
+      image.src = 'image/images.jfif'; // Change to your image path
+      description.textContent = `Room Type: ${roomType}. Click the X button or outside the modal to close.`;
+
+      modal.classList.add('show');
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('show');
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target === modal) {
+        closeImageModal();
+      }
+    }
+
+    // Add click event listeners to all Visit buttons
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.item-btn');
+      buttons.forEach((btn, index) => {
+        // Get room name and type from the parent section div
+        const section = btn.closest('.section');
+        if (section) {
+          const roomName = section.querySelector('h3').textContent;
+          const roomType = section.querySelector('p').textContent;
+          btn.addEventListener('click', () => openImageModal(roomName, roomType));
+        }
+      });
+    });
   </script>
 
 </body>
+
 </html>

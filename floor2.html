@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,37 +21,37 @@
       <div class="office">
         <h3>Office 201</h3>
         <p>Faculty Office</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/office1.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Office 202</h3>
         <p>Faculty Office</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/office2.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Lab 1</h3>
         <p>Computer Science Lab</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/lab1.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Lab 2</h3>
         <p>CSE Lab</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/lab2.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Lab 3</h3>
         <p>Computer Science Lab</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/lab3.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Lab 4</h3>
         <p>CSE Lab</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/lab4.jpeg">Visit</button>
       </div>
       <div class="office">
         <h3>Department of CSE</h3>
         <p>Computer Science & Engineering</p>
-        <button class="item-btn">Visit</button>
+        <button class="item-btn" data-img="rooms/cse dept.jpeg">Visit</button>
       </div>
     </div>
 
@@ -65,7 +66,18 @@
 
     <div class="floor-map" id="mapBox">
       <!-- CHANGE IMAGE NAME IF NEEDED -->
-      <img src="2nd floor.png" alt="UGV B2 2nd Floor Map">
+      <img src="image/2nd floor.png" alt="UGV B2 2nd Floor Map">
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL POPUP -->
+  <div id="imageModal" class="image-modal">
+    <div class="image-modal-content">
+      <button class="image-modal-close" onclick="closeImageModal()">&times;</button>
+      <h2 class="image-modal-title" id="modalTitle">Room Details</h2>
+      <img id="modalImage" src="image/images.jfif" alt="Room image" class="image-modal-image"
+        onerror="this.src='image/images.jfif'">
+      <p class="image-modal-description" id="modalDescription">This is a room in our campus building.</p>
     </div>
   </div>
 
@@ -81,7 +93,51 @@
         btn.textContent = btn.dataset.orig;
       }
     }
+
+    // Image popup functionality
+    function openImageModal(roomName, roomType, imgPath) {
+      const modal = document.getElementById('imageModal');
+      const title = document.getElementById('modalTitle');
+      const image = document.getElementById('modalImage');
+      const description = document.getElementById('modalDescription');
+
+      title.textContent = roomName;
+      // Use provided image path if available, otherwise fallback
+      image.src = imgPath && imgPath.length ? imgPath : 'image/images.jfif';
+      description.textContent = `Room Type: ${roomType}. Click the X button or outside the modal to close.`;
+
+      modal.classList.add('show');
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('show');
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target === modal) {
+        closeImageModal();
+      }
+    }
+
+    // Add click event listeners to all Visit buttons
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.item-btn');
+      buttons.forEach((btn, index) => {
+        // Get room name and type from the parent office div
+        const office = btn.closest('.office');
+        if (office) {
+          const roomName = office.querySelector('h3').textContent;
+          const roomType = office.querySelector('p').textContent;
+          const imgPath = btn.dataset.img || '';
+          btn.addEventListener('click', () => openImageModal(roomName, roomType, imgPath));
+        }
+      });
+    });
   </script>
 
 </body>
+
 </html>

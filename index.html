@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,173 +10,181 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container nav">
-    <div class="logo">UGV DIGITAL CAMPUS MAP</div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">UGV DIGITAL CAMPUS MAP</div>
 
-    <nav>
-      <ul class="menu">
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="menu">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
 
-    <a href="#contact" class="btn-outline">CONTACT</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="overlay"></div>
-  <div class="container hero-content">
-    <h1>Navigate<br>your campus</h1>
-    <p>Discover the power of the UGV digital map</p>
-
-    <!-- FIXED BUTTON -->
-  <a href="#about" class="btn" id="explore-btn">  NAVIGATE</a>
-
-  </div>
-</section>
-
-<!-- ABOUT + MAP -->
-<section class="about section" id="about">
-  <div class="container grid-2">
-    <div>
-      <span class="eyebrow">EXPLORE UGV DIGITAL MAP</span>
-      <h2>Your guide to campus navigation</h2>
-      <p>
-        UGV Digital Campus Map helps students and visitors
-        navigate the University of Global Village easily.
-      </p>
+      <a href="#contact" class="btn-outline">CONTACT</a>
     </div>
+  </header>
 
-    <div id="map"></div>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1>Navigate<br>your campus</h1>
+      <p>Discover the power of the UGV digital map</p>
 
-<!-- MODAL -->
-<div id="buildingModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="buildingName">UGV B2</h2>
+      <!-- FIXED BUTTON -->
+      <a href="#about" class="btn" id="explore-btn"> NAVIGATE</a>
 
-    <div class="floors-container">
-      <div class="floor-box">
-        <h3>1st Floor</h3>
-        <button class="floor-btn" onclick="openFloorPage(1)">Visit Floor</button>
+    </div>
+  </section>
+
+  <!-- ABOUT + MAP -->
+  <section class="about section" id="about">
+    <div class="container grid-2">
+      <div>
+        <span class="eyebrow">EXPLORE UGV DIGITAL MAP</span>
+        <h2>Your guide to campus navigation</h2>
+        <p>
+          UGV Digital Campus Map helps students and visitors
+          navigate the University of Global Village easily.
+        </p>
       </div>
 
-      <div class="floor-box">
-        <h3>2nd Floor</h3>
-        <button class="floor-btn" onclick="openFloorPage(2)">Visit Floor</button>
-      </div>
+      <div id="map"></div>
+    </div>
+  </section>
 
-      <div class="floor-box">
-        <h3>3rd Floor</h3>
-        <button class="floor-btn" onclick="openFloorPage(3)">Visit Floor</button>
-      </div>
+  <!-- MODAL -->
+  <div id="buildingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="buildingName">UGV B2</h2>
 
-      <div class="floor-box">
-        <h3>4th Floor</h3>
-        <button class="floor-btn" onclick="openFloorPage(4)">Visit Floor</button>
+      <div class="floors-container">
+        <div class="floor-box">
+          <h3>1st Floor</h3>
+          <button class="floor-btn" onclick="openFloorPage(1)">Visit Floor</button>
+        </div>
+
+        <div class="floor-box">
+          <h3>2nd Floor</h3>
+          <button class="floor-btn" onclick="openFloorPage(2)">Visit Floor</button>
+        </div>
+
+        <div class="floor-box">
+          <h3>3rd Floor</h3>
+          <button class="floor-btn" onclick="openFloorPage(3)">Visit Floor</button>
+        </div>
+
+        <div class="floor-box">
+          <h3>4th Floor</h3>
+          <button class="floor-btn" onclick="openFloorPage(4)">Visit Floor</button>
+        </div>
+
+        <div class="floor-box">
+          <h3>5th Floor</h3>
+          <button class="floor-btn" onclick="openFloorPage(5)">Visit Floor</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- CONTACT -->
-<section class="contact section" id="contact">
-  <div class="container contact-grid">
-    <div>
-      <span class="eyebrow">GET IN TOUCH</span>
-      <h2>We’re here to assist you!</h2>
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2>We’re here to assist you!</h2>
 
-      <form>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email address" required>
-        <textarea rows="5" placeholder="Message"></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
+        <form>
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email address" required>
+          <textarea rows="5" placeholder="Message"></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contact</h3>
+        <p>📧 araftaspi18@gmail.com</p>
+        <p>📧 methilamaria02@gmail.com</p>
+        <p>📧 sumaiyaislam62@gmail.com</p>
+        <p>📍 Barishal BD</p>
+      </div>
     </div>
+  </section>
 
-    <div class="contact-info">
-      <h3>Contact</h3>
-      <p>📧 araftaspi18@gmail.com</p>
-      <p>📧 methilamaria02@gmail.com</p>
-      <p>📧 sumaiyaislam62@gmail.com</p>
-      <p>📍 Barishal BD</p>
-    </div>
-  </div>
-</section>
+  <footer>
+    <p>© 2026 University of Global Village Campus Map</p>
+  </footer>
 
-<footer>
-  <p>© 2026 University of Global Village Campus Map</p>
-</footer>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Explore scroll
+    document.getElementById("explore-btn").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("about").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
 
-<script>
-// Explore scroll
-document.getElementById("explore-btn").addEventListener("click", function(e) {
-  e.preventDefault();
-  document.getElementById("about").scrollIntoView({
-    behavior: "smooth"
-  });
-});
+    // Initialize map
+    var map = L.map('map').setView([22.7050974, 90.3520741], 18);
 
-// Initialize map
-var map = L.map('map').setView([22.7050974, 90.3520741], 18);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
- attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+    // Marker icon
+    var ugvB2Icon = L.icon({
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+      iconSize: [40, 40],
+      iconAnchor: [20, 40]
+    });
 
-// Marker icon
-var ugvB2Icon = L.icon({
-  iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-  iconSize: [40,40],
-  iconAnchor: [20,40]
-});
+    // Marker
+    L.marker([22.7050974, 90.3520741], { icon: ugvB2Icon })
+      .addTo(map)
+      .bindPopup("UGV B2 Campus")
+      .on('click', function () {
+        openBuildingModal("UGV B2 Campus");
+      });
 
-// Marker
-L.marker([22.7050974, 90.3520741], { icon: ugvB2Icon })
-.addTo(map)
-.bindPopup("UGV B2 Campus")
-.on('click', function() {
-  openBuildingModal("UGV B2 Campus");
-});
+    // Modal logic
+    var modal = document.getElementById("buildingModal");
+    var span = document.getElementsByClassName("close")[0];
 
-// Modal logic
-var modal = document.getElementById("buildingModal");
-var span = document.getElementsByClassName("close")[0];
+    function openBuildingModal(name) {
+      document.getElementById("buildingName").innerText = name;
+      modal.style.display = "block";
+    }
 
-function openBuildingModal(name) {
-  document.getElementById("buildingName").innerText = name;
-  modal.style.display = "block";
-}
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-// Floor redirect
-function openFloorPage(floorNumber) {
-  window.location.href = "floor" + floorNumber + ".html";
-}
-</script>
+    // Floor redirect
+    function openFloorPage(floorNumber) {
+      window.location.href = "floor" + floorNumber + ".html";
+    }
+  </script>
 
 </body>
+
 </html>

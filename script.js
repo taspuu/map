@@ -16,8 +16,8 @@ var ugvB2Icon = L.icon({
 // Marker with popup
 var ugvB2Marker = L.marker([22.7050974, 90.3520741], { icon: ugvB2Icon })
   .addTo(map)
-  .bindPopup('<b>UGV B2 Campus</b><br><img src="2nd-floor.png" style="width:120px;border-radius:8px;">')
-  .on('click', function() { openBuildingModal("UGV B2 Campus"); });
+  .bindPopup('<b>UGV B2 Campus</b><br><img src="image/2nd-floor.png" style="width:120px;border-radius:8px;">')
+  .on('click', function () { openBuildingModal("UGV B2 Campus"); });
 
 // Modal logic
 var modal = document.getElementById("buildingModal");
@@ -36,8 +36,8 @@ function openBuildingModal(name) {
   });
 }
 
-span.onclick = function() { modal.style.display = "none"; }
-window.onclick = function(event) { if(event.target == modal) { modal.style.display = "none"; } }
+span.onclick = function () { modal.style.display = "none"; }
+window.onclick = function (event) { if (event.target == modal) { modal.style.display = "none"; } }
 
 // Floor redirect
 function openFloorPage(floorNumber) {
@@ -45,6 +45,6 @@ function openFloorPage(floorNumber) {
 }
 
 // Button click event listener
-document.getElementById("explore-btn").addEventListener("click", function() {
+document.getElementById("explore-btn").addEventListener("click", function () {
   openFloorPage(2);
 });

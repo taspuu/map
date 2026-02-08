@@ -39,7 +39,7 @@ body {
   top: 0;
   left: 0;
   background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   z-index: 1000;
 }
 
@@ -85,7 +85,7 @@ body {
 =============================== */
 .hero {
   height: 100vh;
-  background: url("images.jfif") center/cover no-repeat;
+  background: url("image/images.jfif") center/cover no-repeat;
   position: relative;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -128,7 +128,7 @@ body {
 
 .btn:hover {
   background: linear-gradient(135deg, #1565c0, #0d47a1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -167,7 +167,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -235,7 +235,7 @@ body {
 
 .floor-btn:hover {
   background: linear-gradient(135deg, #1565c0, #0d47a1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -301,7 +301,9 @@ header h1 {
   margin-bottom: 40px;
 }
 
-.room, .office, .section {
+.room,
+.office,
+.section {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
@@ -309,18 +311,24 @@ header h1 {
   transition: all 0.3s ease;
 }
 
-.room:hover, .office:hover, .section:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.room:hover,
+.office:hover,
+.section:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
-.room h3, .office h3, .section h3 {
+.room h3,
+.office h3,
+.section h3 {
   color: #1a5490;
   font-size: 18px;
   margin: 0 0 10px 0;
 }
 
-.room p, .office p, .section p {
+.room p,
+.office p,
+.section p {
   color: #555;
   font-size: 14px;
   margin: 0 0 15px 0;
@@ -343,7 +351,7 @@ header h1 {
 
 .item-btn:hover {
   background: linear-gradient(135deg, #1565c0, #0d47a1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
@@ -364,9 +372,9 @@ header h1 {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  
- 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+
 
 }
 
@@ -385,13 +393,14 @@ header h1 {
 
 .colorful-btn:hover {
   background: linear-gradient(135deg, #1565c0, #0d47a1);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ===============================
    BACK LINKS & NAV BUTTONS
 =============================== */
-.back-link, .nav-btn {
+.back-link,
+.nav-btn {
   display: inline-block;
   margin-top: 20px;
   margin-right: 15px;
@@ -404,7 +413,8 @@ header h1 {
   transition: all 0.2s;
 }
 
-.back-link:hover, .nav-btn:hover {
+.back-link:hover,
+.nav-btn:hover {
   background: #e0e0e0;
   color: #1565c0;
 }
@@ -413,14 +423,140 @@ header h1 {
    ANIMATION
 =============================== */
 @keyframes fadeIn {
-  from {opacity:0; transform: translateY(10px);}
-  to {opacity:1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   IMAGE POPUP MODAL
+=============================== */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+.image-modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+  position: relative;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.image-modal-close:hover {
+  color: #333;
+}
+
+.image-modal-title {
+  font-size: 24px;
+  color: #1a5490;
+  margin: 0 0 20px 0;
+  padding-right: 30px;
+}
+
+.image-modal-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-modal-description {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments for modal */
+@media (max-width: 480px) {
+  .image-modal {
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+
+  .image-modal-content {
+    padding: 14px;
+    width: 95%;
+    max-width: 420px;
+  }
+
+  .image-modal-image {
+    max-height: 45vh;
+    margin-bottom: 12px;
+  }
+
+  .image-modal-title {
+    font-size: 18px;
+  }
+
+  .image-modal-close {
+    top: 8px;
+    right: 12px;
+    font-size: 24px;
+  }
 }
 
 /* ===============================
    MOBILE
 =============================== */
 @media(max-width: 768px) {
+
   .grid-2,
   .contact-grid {
     grid-template-columns: 1fr;
