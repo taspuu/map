@@ -1,170 +1,124 @@
----
-marp: true
----
+# 🗺️ Digital Campus Map
 
-# Campus Navigation Web App Documentation
+### An Interactive Campus Navigation Web Application
 
-## Project Overview
-This project is a **Campus Navigation Web Application** that allows users to:
-- View the campus map
-- Select buildings and floors
-- See rooms, offices, and sections
-- View floor layouts
-- Navigate between floors easily
+**Digital Campus Map** is a responsive web application designed to help students and visitors explore a campus, select buildings and floors, and find rooms, offices, and other sections.
 
-The project is built using:
-- HTML
-- CSS
-- JavaScript
+The project provides a simple interface for navigating between campus buildings and viewing individual floor layouts.
 
----
+## ✨ Features
 
-## Features
+* 🏫 Interactive campus map
+* 🏢 Building selection
+* 🗂️ Floor selection
+* 🚪 Room and office information
+* 🗺️ Floor layout viewer
+* 🔄 Navigation between floors
+* 📱 Responsive design for desktop, tablet, and mobile
+* 🎨 Interactive UI elements and animations
+* 🪟 Modal-based building/floor selection
 
-### 1. Interactive Campus Map
-- Displays the campus layout
-- Allows building selection
-- Opens a modal with floor options
+## 🛠️ Technologies Used
 
-### 2. Floor Navigation
-Each floor page includes:
-- Room list
-- Visit buttons
-- Floor layout image
-- Navigation buttons
+* **HTML5** — Structure and page content
+* **CSS3** — Styling, layouts, animations, and responsive design
+* **JavaScript** — Interactive components and floor-layout controls
 
-### 3. Floor Layout Viewer
-Users can:
-- Click **View Floor Layout**
-- Show or hide the diagram
+## 📂 Project Structure
 
-### 4. Responsive Design
-The website adapts to:
-- Desktop
-- Tablet
-- Mobile devices
-
----
-
-## Project Structure
-
-```
-project-folder/
+```text
+Digital-Campus-Map/
 │
-├── index.html          # Main campus map page
-├── floor1.html         # First floor page
-├── floor2.html         # Second floor page
-├── style.css           # All styling
-├── background.jpg      # Background image
-├── 1st floor.png       # Floor layout image
-└── README.md           # Documentation
+├── index.html
+├── floor1.html
+├── floor2.html
+├── style.css
+├── background.jpg
+├── 1st floor.png
+└── README.md
 ```
 
----
+## ⚙️ How It Works
 
-## Technologies Used
+### 1. Explore the Campus
 
-### HTML
-Used for:
-- Page structure
-- Navigation buttons
-- Room cards
-- Modal windows
+The user starts on the main campus page and can explore the available buildings.
 
-### CSS
-Used for:
-- Layout
-- Colors
-- Animations
-- Responsive design
-- Buttons and cards
+### 2. Select a Building and Floor
 
-### JavaScript
-Used for:
-- Opening and closing modals
-- Toggling floor layout display
+Selecting a building opens a modal containing the available floor options.
 
-Example:
-```javascript
-function toggleMap(btn) {
-  const map = document.getElementById("mapBox");
-  map.classList.toggle("open");
-}
+### 3. Explore a Floor
+
+The selected floor page displays:
+
+* Room information
+* Office/section information
+* Visit buttons
+* Floor navigation controls
+
+### 4. View the Floor Layout
+
+Users can click **View Floor Layout** to expand or hide the floor diagram.
+
+## 📱 Responsive Design
+
+The interface adapts to different screen sizes:
+
+| Device      | Layout    |
+| ----------- | --------- |
+| 🖥️ Desktop | 3 columns |
+| 💻 Tablet   | 2 columns |
+| 📱 Mobile   | 1 column  |
+
+## 🚀 How to Run
+
+No server or additional dependencies are required.
+
+### Option 1 — Open Directly
+
+1. Clone or download the repository.
+2. Open the project folder.
+3. Open `index.html` in your browser.
+
+### Option 2 — Clone with Git
+
+```bash
+git clone https://github.com/taspuu/Digital-Campus-Map.git
 ```
 
----
+Then open `index.html`.
 
-## How the System Works
+## 🧠 What I Learned
 
-### Step 1: Open Index Page
-The user sees:
-- Campus background
-- Explore button
+Through this project, I practiced:
 
-### Step 2: Choose Building/Floor
-A modal appears showing:
-- Floor boxes
-- Navigation buttons
+* Structuring multi-page websites with HTML
+* Responsive layouts with CSS
+* JavaScript DOM manipulation
+* Modal interactions
+* Dynamic UI elements
+* CSS animations
+* Designing responsive interfaces
+* Organizing a multi-page web project
 
-### Step 3: Open Floor Page
-The user can:
-- See rooms
-- Click Visit
-- View layout
-- Navigate floors
+## 🔮 Future Improvements
 
----
+* 🔍 Add room search functionality
+* 🗺️ Integrate an interactive map
+* 👨‍💼 Add an admin panel for managing rooms
+* 💾 Add database integration
+* 🧭 Implement indoor navigation
+* 📍 Add location-based navigation
 
-## UI Components
+## 👨‍💻 Author
 
-### Room Card
-Each room includes:
-- Room number
-- Description
-- Visit button
+**Fahidul Islam Taspi**
 
-### Navigation Buttons
-- Back to campus
-- Next floor
-- Previous floor
+CSE Student | Aspiring Full-Stack Web Developer
 
-### Floor Layout Button
-- Expands image
-- Smooth animation
+🔗 [LinkedIn](https://www.linkedin.com/in/taspi180/)
 
 ---
 
-## Responsive Behavior
-
-Screen Width | Layout
--------------|--------
-Desktop | 3 columns
-Tablet | 2 columns
-Mobile | 1 column
-
----
-
-## How to Run the Project
-
-1. Download or clone the project
-2. Open folder
-3. Double-click `index.html`
-
-No server required.
-
----
-
-## Future Improvements
-
-Possible enhancements:
-- Real map integration
-- Room search feature
-- Admin panel to edit rooms
-- Database integration
-- Indoor navigation system
-
----
-
-## Author
-Fahidul Islam Taspi(12411007)
-
+⭐ If you find this project interesting, consider giving it a star!
